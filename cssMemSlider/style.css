@@ -16,8 +16,18 @@ input {
 	transition: 0.4s ease;
 }
 
+.radio:hover .radiobtn {
+	border: 2vh solid #3ba55d;
+	transition: 0.4s;
+}
+
 .radiobtn:hover {
 	border: 2vh solid #3ba55d;
+	transition: 0.4s;
+}
+
+.radiobtn:focus {
+	border: 2vh solid yellow;
 	transition: 0.4s;
 }
 
@@ -35,6 +45,16 @@ input {
 
 #radio4:checked~.under-slider .controls .label4 .radiobtn {
 	background: #3ba55d;
+}
+
+@keyframes commentAnimation {
+	from {
+		opacity: 0%;
+	}
+
+	to {
+		opacity: 100%;
+	}
 }
 
 body {
@@ -79,6 +99,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	transition: 0.3s;
+	text-align: center;
 }
 
 .controls {
@@ -99,19 +120,19 @@ body {
 }
 
 .img1 img {
-	width: 17em;
+	width: 20vw;
 }
 
 .img2 img {
-	width: 17em;
+	width: 20vw;
 }
 
 .img3 img {
-	width: 22em;
+	width: 25vw;
 }
 
 .img4 img {
-	width: 22em;
+	width: 25vw;
 }
 
 .img1 {
@@ -137,25 +158,21 @@ body {
 .comment1 {
 	width: 15em;
 	display: none;
-	transition: 0.3s;
 }
 
 .comment2 {
 	width: 15em;
 	display: none;
-	transition: 0.3s;
 }
 
 .comment3 {
 	width: 15em;
 	display: none;
-	transition: 0.3s;
 }
 
 .comment4 {
 	width: 15em;
 	display: none;
-	transition: 0.3s;
 }
 
 /* imgs slide */
@@ -176,34 +193,98 @@ body {
 }
 
 #radio1:checked~.images {
-	margin-left: 61em;
+	margin-left: 69vw;
 }
 
 #radio2:checked~.images {
-	margin-left: 27em;
+	margin-left: 29vw;
 }
 
 #radio3:checked~.images {
-	margin-left: -12em;
+	margin-left: -14vw;
 }
 
 #radio4:checked~.images {
-	margin-left: -56em;
+	margin-left: -64vw;
 }
 
 /* comments slide */
 #radio1:checked~.under-slider .comments .comment1 {
 	display: block;
+	animation-name: commentAnimation;
+	animation-duration: 1.5s;
 }
 
 #radio2:checked~.under-slider .comments .comment2 {
 	display: block;
+	animation-name: commentAnimation;
+	animation-duration: 1.5s;
 }
 
 #radio3:checked~.under-slider .comments .comment3 {
 	display: block;
+	animation-name: commentAnimation;
+	animation-duration: 1.5s;
 }
 
 #radio4:checked~.under-slider .comments .comment4 {
 	display: block;
+	animation-name: commentAnimation;
+	animation-duration: 1.5s;
+}
+
+@media (max-width: 768px) {
+	.under-slider {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		flex-direction: column;
+	}
+
+	.comments {
+		order: 2;
+	}
+
+	.img1 img {
+		height: 25vh;
+		width: auto;
+	}
+
+	.img2 img {
+		height: 25vh;
+		width: auto;
+	}
+
+	.img3 img {
+		height: 25vh;
+		width: auto;
+	}
+
+	.img4 img {
+		height: 25vh;
+		width: auto;
+	}
+
+	#radio1:checked~.images {
+		margin-left: 35.5em;
+	}
+
+	#radio2:checked~.images {
+		margin-left: 14em;
+	}
+
+	#radio3:checked~.images {
+		margin-left: -10em;
+	}
+
+	#radio4:checked~.images {
+		margin-left: -33em;
+	}
+}
+
+@media (max-width: 435px) {
+	.comments {
+		font-size: 0.8em;
+	}
 }
