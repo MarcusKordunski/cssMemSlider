@@ -2,12 +2,6 @@
 	box-sizing: border-box;
 	color: #ccccce;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	overflow: hidden;
-}
-
-html {
-	width: 100%;
-	height: 100%;
 }
 
 input {
@@ -23,7 +17,8 @@ input {
 }
 
 .radiobtn:hover {
-	background: #dcddde;
+	border: 2vh solid #3ba55d;
+	transition: 0.4s;
 }
 
 #radio1:checked~.under-slider .controls .label1 .radiobtn {
@@ -43,12 +38,13 @@ input {
 }
 
 body {
-	width: 100%;
-	height: 100%;
+	height: 100vh;
 	background-color: #25282a;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin: 0;
+	overflow: hidden;
 }
 
 .container {
@@ -71,6 +67,20 @@ body {
 	flex-direction: row;
 }
 
+.images {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.3s;
+}
+
+.comments {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.3s;
+}
+
 .controls {
 	display: flex;
 	justify-content: center;
@@ -91,45 +101,90 @@ body {
 
 .img1 {
 	opacity: 0%;
+	transition: 0.3s;
 }
 
 .img2 {
 	opacity: 0%;
+	transition: 0.3s;
 }
 
 .img3 {
 	opacity: 0%;
+	transition: 0.3s;
 }
 
 .img4 {
 	opacity: 0%;
+	transition: 0.3s;
+}
+
+.comment1 {
+	display: none;
+	transition: 0.3s;
 }
 
 .comment2 {
 	display: none;
+	transition: 0.3s;
 }
 
 .comment3 {
 	display: none;
+	transition: 0.3s;
 }
 
 .comment4 {
 	display: none;
+	transition: 0.3s;
 }
 
-
-#radio1:checked~div.img1 {
+/* imgs slide */
+#radio1:checked~.images div.img1 {
 	opacity: 100%;
 }
 
-#radio2:checked~div.img2 {
+#radio2:checked~.images div.img2 {
 	opacity: 100%;
 }
 
-#radio3:checked~div.img3 {
+#radio3:checked~.images div.img3 {
 	opacity: 100%;
 }
 
-#radio4:checked~div.img4 {
+#radio4:checked~.images div.img4 {
 	opacity: 100%;
+}
+
+#radio1:checked~.images {
+	margin-left: 50em;
+}
+
+#radio2:checked~.images {
+	margin-left: 15em;
+}
+
+#radio3:checked~.images {
+	margin-left: -17em;
+}
+
+#radio4:checked~.images {
+	margin-left: -50em;
+}
+
+/* comments slide */
+#radio1:checked~.under-slider .comments .comment1 {
+	display: block;
+}
+
+#radio2:checked~.under-slider .comments .comment2 {
+	display: block;
+}
+
+#radio3:checked~.under-slider .comments .comment3 {
+	display: block;
+}
+
+#radio4:checked~.under-slider .comments .comment4 {
+	display: block;
 }
