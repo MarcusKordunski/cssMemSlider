@@ -267,19 +267,19 @@ body {
 	}
 
 	#radio1:checked~.images {
-		margin-left: 35.5em;
+		margin-left: 74vh;
 	}
 
 	#radio2:checked~.images {
-		margin-left: 14em;
+		margin-left: 29vh;
 	}
 
 	#radio3:checked~.images {
-		margin-left: -10em;
+		margin-left: -21vh;
 	}
 
 	#radio4:checked~.images {
-		margin-left: -33em;
+		margin-left: -70vh;
 	}
 }
 
