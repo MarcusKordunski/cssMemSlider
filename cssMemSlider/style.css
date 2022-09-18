@@ -1,0 +1,290 @@
+* {
+	box-sizing: border-box;
+	color: #ccccce;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input {
+	display: none;
+}
+
+.radiobtn {
+	border-radius: 100%;
+	background: #b9bbbe;
+	width: 1rem;
+	height: 1rem;
+	transition: 0.4s ease;
+}
+
+.radio:hover .radiobtn {
+	border: 2vh solid #3ba55d;
+	transition: 0.4s;
+}
+
+.radiobtn:hover {
+	border: 2vh solid #3ba55d;
+	transition: 0.4s;
+}
+
+.radiobtn:focus {
+	border: 2vh solid yellow;
+	transition: 0.4s;
+}
+
+#radio1:checked~.under-slider .controls .label1 .radiobtn {
+	background: #3ba55d;
+}
+
+#radio2:checked~.under-slider .controls .label2 .radiobtn {
+	background: #3ba55d;
+}
+
+#radio3:checked~.under-slider .controls .label3 .radiobtn {
+	background: #3ba55d;
+}
+
+#radio4:checked~.under-slider .controls .label4 .radiobtn {
+	background: #3ba55d;
+}
+
+@keyframes commentAnimation {
+	from {
+		opacity: 0%;
+	}
+
+	to {
+		opacity: 100%;
+	}
+}
+
+body {
+	height: 100vh;
+	background-color: #25282a;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	overflow: hidden;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 90vh;
+	width: 55vw;
+	background-color: #36393f;
+	border-radius: 0.8rem;
+	flex-direction: column;
+	gap: 1em;
+}
+
+.under-slider {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+	flex-direction: row;
+}
+
+.images {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.3s;
+}
+
+.comments {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.3s;
+	text-align: center;
+}
+
+.controls {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.radio {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 6em;
+	width: 3em;
+	cursor: pointer;
+	transition: 0.3s ease-out;
+	border-radius: 1%;
+}
+
+.img1 img {
+	width: 20vw;
+}
+
+.img2 img {
+	width: 20vw;
+}
+
+.img3 img {
+	width: 25vw;
+}
+
+.img4 img {
+	width: 25vw;
+}
+
+.img1 {
+	opacity: 0%;
+	transition: 0.3s;
+}
+
+.img2 {
+	opacity: 0%;
+	transition: 0.3s;
+}
+
+.img3 {
+	opacity: 0%;
+	transition: 0.3s;
+}
+
+.img4 {
+	opacity: 0%;
+	transition: 0.3s;
+}
+
+.comment1 {
+	width: 15em;
+	display: none;
+}
+
+.comment2 {
+	width: 15em;
+	display: none;
+}
+
+.comment3 {
+	width: 15em;
+	display: none;
+}
+
+.comment4 {
+	width: 15em;
+	display: none;
+}
+
+/* imgs slide */
+#radio1:checked~.images div.img1 {
+	opacity: 100%;
+}
+
+#radio2:checked~.images div.img2 {
+	opacity: 100%;
+}
+
+#radio3:checked~.images div.img3 {
+	opacity: 100%;
+}
+
+#radio4:checked~.images div.img4 {
+	opacity: 100%;
+}
+
+#radio1:checked~.images {
+	margin-left: 69vw;
+}
+
+#radio2:checked~.images {
+	margin-left: 29vw;
+}
+
+#radio3:checked~.images {
+	margin-left: -14vw;
+}
+
+#radio4:checked~.images {
+	margin-left: -64vw;
+}
+
+/* comments slide */
+#radio1:checked~.under-slider .comments .comment1 {
+	display: block;
+	animation-name: commentAnimation;
+	animation-duration: 1.5s;
+}
+
+#radio2:checked~.under-slider .comments .comment2 {
+	display: block;
+	animation-name: commentAnimation;
+	animation-duration: 1.5s;
+}
+
+#radio3:checked~.under-slider .comments .comment3 {
+	display: block;
+	animation-name: commentAnimation;
+	animation-duration: 1.5s;
+}
+
+#radio4:checked~.under-slider .comments .comment4 {
+	display: block;
+	animation-name: commentAnimation;
+	animation-duration: 1.5s;
+}
+
+@media (max-width: 768px) {
+	.under-slider {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		flex-direction: column;
+	}
+
+	.comments {
+		order: 2;
+	}
+
+	.img1 img {
+		height: 25vh;
+		width: auto;
+	}
+
+	.img2 img {
+		height: 25vh;
+		width: auto;
+	}
+
+	.img3 img {
+		height: 25vh;
+		width: auto;
+	}
+
+	.img4 img {
+		height: 25vh;
+		width: auto;
+	}
+
+	#radio1:checked~.images {
+		margin-left: 74vh;
+	}
+
+	#radio2:checked~.images {
+		margin-left: 29vh;
+	}
+
+	#radio3:checked~.images {
+		margin-left: -21vh;
+	}
+
+	#radio4:checked~.images {
+		margin-left: -70vh;
+	}
+}
+
+@media (max-width: 435px) {
+	.comments {
+		font-size: 0.8em;
+	}
+}
